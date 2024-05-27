@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForexFlow.Api", "ForexFlow.Api\ForexFlow.Api.csproj", "{A71FDB52-2C5D-4A62-8676-6A1044856B34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A71FDB52-2C5D-4A62-8676-6A1044856B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A71FDB52-2C5D-4A62-8676-6A1044856B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A71FDB52-2C5D-4A62-8676-6A1044856B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A71FDB52-2C5D-4A62-8676-6A1044856B34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9566DD96-DC13-41AA-8541-9DB72D5791DF}
+	EndGlobalSection
+EndGlobal
