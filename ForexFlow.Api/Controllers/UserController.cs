@@ -4,61 +4,42 @@
 //==================================================
 
 using ForexFlow.Api.Models.Foundations.Users;
-using ForexFlow.Api.Services.Foundations.Users;
+using ForexFlow.Api.Services.Processings.Users;
 using Microsoft.AspNetCore.Mvc;
 using RESTFulSense.Controllers;
 
 namespace ForexFlow.Api.Controllers
 {
-	[ApiController]
-	[Route("api/[controller]")]
-	public class UserController : RESTFulController
-	{
-		private readonly IUserService userService;
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserController : RESTFulController
+    {
+        private readonly IUserProcessingService userProcessingService;
 
-		public UserController(IUserService userService)
-		{
-			this.userService = userService;
-		}
+        public UserController(IUserProcessingService userProcessingService)
+        {
+            this.userProcessingService = userProcessingService;
+        }
 
-		[HttpPost]
-		public async ValueTask<ActionResult<User>> PostUserAsync(User user)
-		{
-			User postedUser = await this.userService.AddUserAsync(user);
+        [HttpPost]
+        public async ValueTask<ActionResult<User>> Register(User user)
+        {
+            User postedUser =
+                await this.userProcessingService.CreateUserAsync(user);
 
-			return Created(postedUser);
-		}
+            return Created(postedUser);
+        }
 
-		[HttpGet]
-		public ActionResult<User> GetAllUsers()
-		{
-			IQueryable<User> users = this.userService.SelectAllUsers();
+        [HttpGet]
+        public ActionResult Login(string email, string password)
+        {
+            bool state =
+                this.userProcessingService.EnsureUserAsync(email, password);
 
-			return Ok(users);
-		}
-
-		[HttpGet("{Id}")]
-		public async ValueTask<ActionResult<User>> GetUserByIdAsync(Guid Id)
-		{
-			User gettingUser = await this.userService.SelectUserByIdAsync(Id);
-
-			return Ok(gettingUser);
-		}
-
-		[HttpPut]
-		public async ValueTask<ActionResult<User>> PutUserAsync(User user)
-		{
-			User updatedUser = await this.userService.ModifyUserAsync(user);
-
-			return Ok(updatedUser);
-		}
-
-		[HttpDelete]
-		public async ValueTask<ActionResult<User>> DeleteUserAsync(Guid Id)
-		{
-			User removedUser = await this.userService.RemoveUserAsync(Id);
-
-			return Ok(removedUser);
-		}
-	}
+            if (state is true)
+                return Ok();
+            else
+                return NotFound();
+        }
+    }
 }

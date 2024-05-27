@@ -4,61 +4,29 @@
 //==================================================
 
 using ForexFlow.Api.Models.Foundations.Rates;
-using ForexFlow.Api.Services.Foundations.Rates;
+using ForexFlow.Api.Services.Processings.Rates;
 using Microsoft.AspNetCore.Mvc;
 using RESTFulSense.Controllers;
 
 namespace ForexFlow.Api.Controllers
 {
-	[ApiController]
-	[Route("api/[controller]")]
-	public class RateController : RESTFulController
-	{
-		private readonly IRateService rateService;
+    [ApiController]
+    [Route("api/[controller]")]
+    public class RateController : RESTFulController
+    {
+        private readonly IRateProcessingService rateProcessingService;
 
-		public RateController(IRateService rateService)
-		{
-			this.rateService = rateService;
-		}
+        public RateController(IRateProcessingService rateProcessingService)
+        {
+            this.rateProcessingService = rateProcessingService;
+        }
 
-		[HttpPost]
-		public async ValueTask<ActionResult<Rate>> PostRateAsync(Rate Rate)
-		{
-			Rate postedRate = await this.rateService.AddRateAsync(Rate);
+        [HttpGet]
+        public async ValueTask<ActionResult<Rate>> GetAllRates()
+        {
+            Rate rate = await this.rateProcessingService.GetRatesAsync();
 
-			return Created(postedRate);
-		}
-
-		[HttpGet]
-		public ActionResult<Rate> GetAllRates()
-		{
-			IQueryable<Rate> Rates = this.rateService.SelectAllRates();
-
-			return Ok(Rates);
-		}
-
-		[HttpGet("{Id}")]
-		public async ValueTask<ActionResult<Rate>> GetRateByIdAsync(Guid Id)
-		{
-			Rate gettingRate = await this.rateService.SelectRateByIdAsync(Id);
-
-			return Ok(gettingRate);
-		}
-
-		[HttpPut]
-		public async ValueTask<ActionResult<Rate>> PutRateAsync(Rate Rate)
-		{
-			Rate updatedRate = await this.rateService.ModifyRateAsync(Rate);
-
-			return Ok(updatedRate);
-		}
-
-		[HttpDelete]
-		public async ValueTask<ActionResult<Rate>> DeleteRateAsync(Guid Id)
-		{
-			Rate removedRate = await this.rateService.RemoveRateAsync(Id);
-
-			return Ok(removedRate);
-		}
-	}
+            return Ok(rate);
+        }
+    }
 }
