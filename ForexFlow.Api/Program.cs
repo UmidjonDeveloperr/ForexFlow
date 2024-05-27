@@ -3,6 +3,7 @@
 // Free To Use To Find Comfort and Peace
 //==================================================
 
+using ForexFlow.Api.Brokers.Loggings;
 using ForexFlow.Api.Brokers.Storages;
 using ForexFlow.Api.Services.Foundations.Users;
 
@@ -34,5 +35,6 @@ internal class Program
 	private static void AddBrokers(WebApplicationBuilder builder)
 	{
 		builder.Services.AddTransient<IStorageBroker, StorageBroker>();
+		builder.Services.AddTransient<ILoggingBroker, LoggingBroker>();
 	}
 }
