@@ -1,4 +1,9 @@
-﻿using ForexFlow.Api.Models.Foundations.Users;
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+using ForexFlow.Api.Models.Foundations.Users;
 using ForexFlow.Api.Services.Foundations.Users;
 using Microsoft.AspNetCore.Mvc;
 using RESTFulSense.Controllers;
@@ -35,7 +40,7 @@ namespace ForexFlow.Api.Controllers
 		[HttpGet("{Id}")]
 		public async ValueTask<ActionResult<User>> GetUserByIdAsync(Guid Id)
 		{
-			User gettingUser = await this.userService.SelectUserById(Id);
+			User gettingUser = await this.userService.SelectUserByIdAsync(Id);
 
 			return Ok(gettingUser);
 		}

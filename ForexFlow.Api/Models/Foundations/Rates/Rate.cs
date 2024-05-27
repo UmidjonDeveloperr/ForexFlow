@@ -1,4 +1,9 @@
-﻿namespace ForexFlow.Api.Models.Foundations.Rates
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+namespace ForexFlow.Api.Models.Foundations.Rates
 {
 	public class Rate
 	{

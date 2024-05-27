@@ -1,4 +1,9 @@
-﻿namespace ForexFlow.Api.Models.Foundations.Users
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+namespace ForexFlow.Api.Models.Foundations.Users
 {
 	public class User
 	{

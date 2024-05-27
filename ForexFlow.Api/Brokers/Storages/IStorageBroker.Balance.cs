@@ -1,4 +1,9 @@
-﻿using ForexFlow.Api.Models.Foundations.Balances;
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+using ForexFlow.Api.Models.Foundations.Balances;
 
 namespace ForexFlow.Api.Brokers.Storages
 {

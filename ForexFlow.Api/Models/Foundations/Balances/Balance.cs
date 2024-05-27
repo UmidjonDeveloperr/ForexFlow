@@ -1,4 +1,9 @@
-﻿namespace ForexFlow.Api.Models.Foundations.Balances
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+namespace ForexFlow.Api.Models.Foundations.Balances
 {
 	public class Balance
 	{

@@ -1,7 +1,10 @@
+//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
 using ForexFlow.Api.Brokers.Storages;
-using ForexFlow.Api.Controllers;
 using ForexFlow.Api.Services.Foundations.Users;
-using Microsoft.OpenApi.Models;
 
 internal class Program
 {
