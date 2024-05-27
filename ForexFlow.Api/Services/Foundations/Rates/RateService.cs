@@ -1,4 +1,9 @@
-﻿using ForexFlow.Api.Brokers.Storages;
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+using ForexFlow.Api.Brokers.Storages;
 using ForexFlow.Api.Models.Foundations.Rates;
 
 namespace ForexFlow.Api.Services.Foundations.Rates
@@ -18,7 +23,7 @@ namespace ForexFlow.Api.Services.Foundations.Rates
 		public IQueryable<Rate> SelectAllRates() =>
 			this.storageBroker.RetrieveAllRates();
 
-		public async ValueTask<Rate> SelectRateById(Guid Id) =>
+		public async ValueTask<Rate> SelectRateByIdAsync(Guid Id) =>
 			await this.storageBroker.RetrieveRateById(Id);
 
 		public async ValueTask<Rate> ModifyRateAsync(Rate Rate) =>

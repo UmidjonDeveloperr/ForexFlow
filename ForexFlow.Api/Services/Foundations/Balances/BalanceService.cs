@@ -1,4 +1,9 @@
-﻿using ForexFlow.Api.Brokers.Storages;
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+using ForexFlow.Api.Brokers.Storages;
 using ForexFlow.Api.Models.Foundations.Balances;
 
 namespace ForexFlow.Api.Services.Foundations.Balances
@@ -18,7 +23,7 @@ namespace ForexFlow.Api.Services.Foundations.Balances
 		public IQueryable<Balance> SelectAllBalances() =>
 			this.storageBroker.RetrieveAllBalances();
 
-		public async ValueTask<Balance> SelectBalanceById(Guid Id) =>
+		public async ValueTask<Balance> SelectBalanceByIdAsync(Guid Id) =>
 			await this.storageBroker.RetrieveBalanceById(Id);
 
 		public async ValueTask<Balance> ModifyBalanceAsync(Balance Balance) =>

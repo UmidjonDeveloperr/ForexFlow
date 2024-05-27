@@ -1,4 +1,9 @@
-﻿using ForexFlow.Api.Models.Foundations.Rates;
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+using ForexFlow.Api.Models.Foundations.Rates;
 
 namespace ForexFlow.Api.Brokers.Storages
 {

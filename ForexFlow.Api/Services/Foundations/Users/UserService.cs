@@ -1,4 +1,9 @@
-﻿using ForexFlow.Api.Brokers.Storages;
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+using ForexFlow.Api.Brokers.Storages;
 using ForexFlow.Api.Models.Foundations.Users;
 
 namespace ForexFlow.Api.Services.Foundations.Users
@@ -18,7 +23,7 @@ namespace ForexFlow.Api.Services.Foundations.Users
 		public IQueryable<User> SelectAllUsers() =>
 			this.storageBroker.RetrieveAllUsers();
 
-		public async ValueTask<User> SelectUserById(Guid Id) =>
+		public async ValueTask<User> SelectUserByIdAsync(Guid Id) =>
 			await this.storageBroker.RetrieveUserById(Id);
 
 		public async ValueTask<User> ModifyUserAsync(User user) =>

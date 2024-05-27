@@ -1,4 +1,9 @@
-﻿using ForexFlow.Api.Models.Foundations.Balances;
+﻿//==================================================
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Free To Use To Find Comfort and Peace
+//==================================================
+
+using ForexFlow.Api.Models.Foundations.Balances;
 
 namespace ForexFlow.Api.Services.Foundations.Balances
 {
@@ -6,7 +11,7 @@ namespace ForexFlow.Api.Services.Foundations.Balances
 	{
 		ValueTask<Balance> AddBalanceAsync(Balance Balance);
 		IQueryable<Balance> SelectAllBalances();
-		ValueTask<Balance> SelectBalanceById(Guid Id);
+		ValueTask<Balance> SelectBalanceByIdAsync(Guid Id);
 		ValueTask<Balance> ModifyBalanceAsync(Balance Balance);
 		ValueTask<Balance> RemoveBalanceAsync(Guid Id);
 	}
